@@ -74,7 +74,7 @@ export const commentOnPost = async (req, res) => {
     const userId = req.user._id;
 
     if (!text) {
-      return res.status(400).jsom({ error: "Text field is required" });
+      return res.status(400).json({ error: "Text field is required" });
     }
 
     const post = await Post.findById(postId);
