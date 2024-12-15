@@ -14,13 +14,12 @@ import { formatPostDate } from "../../utils/db/date";
 const Post = ({ post }) => {
   const queryClient = useQueryClient();
   const [comment, setComment] = useState("");
+  const { data: authUser } = useQuery({ queryKey: ["authUser"] });
 
   const postOwner = post.user;
   const isLiked = post.likes.includes(authUser._id);
   const isMyPost = authUser._id === post.user._id;
   const formattedDate = formatPostDate(post.createdAt);
-
-  const { data: authUser } = useQuery({ queryKey: ["authUser"] });
 
   const { mutate: deletePost, isPending: isDeleting } = useMutation({
     mutationFn: async () => {
