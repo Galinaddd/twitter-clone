@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import http from "http";
 import cookieParser from "cookie-parser";
 import { v2 as cloudinary } from "cloudinary";
 
@@ -29,7 +30,18 @@ app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/notifications", notificationRoutes);
 
-app.listen(PORT, () => {
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+//   connectMongoDB();
+// });
+const server = http.createServer(
+  {
+    maxHeaderSize: 16384, // Set maximum header size to 16 KB
+  },
+  app
+);
+
+server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   connectMongoDB();
 });
