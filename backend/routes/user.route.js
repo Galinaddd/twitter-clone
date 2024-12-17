@@ -10,6 +10,8 @@ import {
 
 const router = express.Router();
 
+console.log("user rout");
+
 router.get("/profile/:username", protectRoute, getUserProfile);
 router.post("/follow/:id", protectRoute, followUnfollowUser);
 router.get("/suggested", protectRoute, getSuggestedUsers);

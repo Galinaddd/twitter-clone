@@ -1,9 +1,11 @@
 import Post from "./Post";
 import PostSkeleton from "../skeletons/PostSkeleton";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect } from "react";
 
 const Posts = ({ feedType, username, userId }) => {
+  console.log("feedType", feedType);
+  const queryClient = useQueryClient();
   const getPostEndpoint = () => {
     switch (feedType) {
       case "forYou":

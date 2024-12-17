@@ -100,6 +100,8 @@ export const updateUserProfile = async (req, res) => {
     req.body;
   let { profileImg, coverImg } = req.body;
 
+  console.log("profileImg, coverImg", profileImg, coverImg);
+
   const userId = req.user._id;
 
   try {
