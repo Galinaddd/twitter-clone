@@ -5,7 +5,8 @@ export default {
   darkMode: "class", // or 'media' for system-wide dark mode
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   safelist: [
-    "data-theme-black", // Збереження динамічної теми
+    "data-theme-black",
+    "dark", // Збереження динамічної теми
   ],
   theme: {
     extend: {},
