@@ -7,6 +7,7 @@
 - Node.js
 - Express.js
 - MongoDB
+- State manager - TanStack Query
 
 ### Features:
 
